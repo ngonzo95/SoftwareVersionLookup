@@ -13,3 +13,9 @@ class Software:
                 return self.minorVersion > other.minorVersion
 
             return self.patch > other.patch
+
+        def __eq__(self, other):
+            return (self.name == other.name and
+                   self.majorVersion == other.majorVersion and
+                   self.minorVersion == other.minorVersion and
+                   self.patch == other.patch)

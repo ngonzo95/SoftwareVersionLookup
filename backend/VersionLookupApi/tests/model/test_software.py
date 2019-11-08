@@ -17,3 +17,10 @@ def test_gt_compares_by_fist_looking_at_Major_then_Minor_then_Patch():
 
 def test_gt_when_equal_returns_false():
     assert not Software("a", (5,7,1)) > Software("b", (5,7,1))
+
+def test_eq():
+    assert Software("a", (5,7,1)) == Software("a", (5,7,1))
+    assert not Software("a", (6,7,1)) == Software("a", (5,7,1))
+    assert not Software("a", (5,7,1)) == Software("b", (5,7,1))
+    assert not Software("a", (5,7,1)) == Software("a", (5,3,1))
+    assert not Software("a", (5,7,1)) == Software("a", (5,7,6))
