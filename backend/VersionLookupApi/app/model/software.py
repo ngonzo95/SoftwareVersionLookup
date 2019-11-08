@@ -19,3 +19,9 @@ class Software:
                    self.majorVersion == other.majorVersion and
                    self.minorVersion == other.minorVersion and
                    self.patch == other.patch)
+
+        def toJson(self):
+            versionString = (str(self.majorVersion) + "." +
+                            str(self.minorVersion) + "." + str(self.patch))
+
+            return {'version': versionString, 'name': self.name}

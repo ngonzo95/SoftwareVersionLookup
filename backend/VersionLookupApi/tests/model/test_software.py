@@ -24,3 +24,9 @@ def test_eq():
     assert not Software("a", (5,7,1)) == Software("b", (5,7,1))
     assert not Software("a", (5,7,1)) == Software("a", (5,3,1))
     assert not Software("a", (5,7,1)) == Software("a", (5,7,6))
+
+def test_toJson_returns_software_as_dict():
+    software = Software("a", (2,4,5))
+    expectedDict = {'name':"a", 'version':"2.4.5"}
+
+    assert software.toJson() == expectedDict
