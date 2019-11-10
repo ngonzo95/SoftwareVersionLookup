@@ -3,14 +3,17 @@ import { AppComponent } from './app.component';
 import { UserVersionInputComponent } from './user-version-input/user-version-input.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatTableModule } from '@angular/material/table';
+import { SoftwareListComponent } from './software-list/software-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, HttpClientTestingModule ],
+      imports: [ FormsModule, HttpClientTestingModule, MatTableModule ],
       declarations: [
         AppComponent,
-        UserVersionInputComponent
+        UserVersionInputComponent,
+        SoftwareListComponent
       ],
     }).compileComponents();
   }));

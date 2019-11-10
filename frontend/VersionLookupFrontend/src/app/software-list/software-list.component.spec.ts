@@ -4,6 +4,7 @@ import { SoftwareListComponent } from './software-list.component';
 import { SoftwareListService } from '../service/software-list.service';
 import { Software } from '../model/software';
 import { BehaviorSubject } from 'rxjs';
+import { MatTableModule } from '@angular/material/table';
 
 describe('SoftwareListComponent', () => {
   let component: SoftwareListComponent;
@@ -12,6 +13,7 @@ describe('SoftwareListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ MatTableModule ],
       declarations: [ SoftwareListComponent ],
       providers: [{provide: SoftwareListService, useClass: MockListService}]
     })
