@@ -1,0 +1,13 @@
+<form name="form">
+  <label for="input">Please input a version number and we will find
+    all the softwares in our system that have a greater version. </label>
+  <br>
+  <input [(ngModel)]="userInput" type="text" id="versionInput" name="input" />
+  <br>
+  <button [disabled]="!inputIsValid" id="submitVersion"> Submit</button>
+  <br>
+  <label *ngIf="!inputIsValid && userInput != null && userInput != ''">
+    The version you entered does not follow the proper format. Please ensure
+    you use only numbers and have no more than two
+    sub versions</label>
+</form>
