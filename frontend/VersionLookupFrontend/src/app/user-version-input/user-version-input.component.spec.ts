@@ -3,6 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserVersionInputComponent } from './user-version-input.component';
 import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SoftwareListService } from '../service/software-list.service';
 
 describe('UserVersionInputComponent', () => {
   let component: UserVersionInputComponent;
@@ -10,7 +13,7 @@ describe('UserVersionInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule ],
+      imports: [ FormsModule, HttpClientTestingModule],
       declarations: [UserVersionInputComponent]
     })
       .compileComponents();

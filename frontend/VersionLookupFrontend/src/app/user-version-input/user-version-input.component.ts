@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { SoftwareListService } from '../service/software-list.service';
 
 @Component({
   selector: 'app-user-version-input',
@@ -14,7 +15,7 @@ export class UserVersionInputComponent implements OnInit {
   @Output()
   inputIsValidChange = new EventEmitter<boolean>()
 
-  constructor() { }
+  constructor(private listService: SoftwareListService) { }
   ngOnInit() { }
 
   @Input()
@@ -39,8 +40,12 @@ export class UserVersionInputComponent implements OnInit {
 
   checkIfValidInput(input: string): boolean {
     let regex: RegExp = new RegExp('^(\\d+(.\\d+)?(.\\d+)?)$')
-    console.log("regex ran with " + input + "regex was " + regex)
     return regex.test(input)
+  }
 
+  submit(){
+    if (this.inputIsValid){
+      this.listService.update(this.userInput)
+    }
   }
 }
