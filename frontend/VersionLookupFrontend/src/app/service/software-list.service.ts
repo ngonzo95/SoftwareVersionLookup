@@ -11,7 +11,7 @@ export class SoftwareListService {
   softwareList: BehaviorSubject<Software[]> = new BehaviorSubject([])
   apiErrorOccured: BehaviorSubject<Boolean> = new BehaviorSubject(false)
 
-  readonly API_URL: string = "http://127.0.0.1:5000"
+  readonly API_URL: string = "http://localhost:5000"
   constructor(private http: HttpClient) { }
 
   //Service method to update the software List
