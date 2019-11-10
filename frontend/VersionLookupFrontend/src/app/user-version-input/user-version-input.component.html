@@ -5,9 +5,8 @@
   <input [(ngModel)]="userInput" type="text" id="versionInput" name="input" />
   <br>
   <button [disabled]="!inputIsValid" (click) ="submit()" id="submitVersion"> Submit</button>
-  <br>
-  <label *ngIf="!inputIsValid && userInput != null && userInput != ''">
+  <p *ngIf="!inputIsValid && userInput != null && userInput != ''">
     The version you entered does not follow the proper format. Please ensure
     you use only numbers and have no more than two
-    sub versions</label>
+    sub versions</p>
 </form>
