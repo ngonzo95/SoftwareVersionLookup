@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UserVersionInputComponent } from './user-version-input/user-version-input.component';
 import { FormsModule, } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { FormsModule, } from '@angular/forms';
     UserVersionInputComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
